@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald:400,500');
+
+
+body{
+  margin: 0;
+  padding: 30px;
+  background-color: rgb(210, 218, 226);
+  background-image: linear-gradient(70deg, transparent, transparent 50%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0.3));
+  background-size: 100vw 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.container{
+  min-width: 400px;
+}
+
+.title{
+  font-family: "Oswald", sans-serif;
+  font-weight: 500;
+  font-size: 1.6em;
+}
+
+.plain{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+.bar{
+  padding:0;
+  margin-bottom: 20px;
+  position: relative;
+  background-color: rgb(210, 218, 226);
+  border-radius: 3px;
+  box-shadow: 1px 1px 4px;
+}
+
+
+.bar-progressing{
+  position: relative;
+  overflow: hidden;
+  background-color: #2c3e50;
+  background-image: linear-gradient(45deg, transparent, transparent 25%, rgba(255, 255, 255, 0.5) 25%, rgba(255, 255, 255, 0.5) 50%, transparent 50%, transparent 75%, rgba(255, 255, 255, 0.5) 75%, rgba(255, 255, 255, 0.5));
+  background-size: 50px 50px;
+  border-radius: 3px 0 0 3px;
+  animation-fill-mode: forwards;
+}
+
+
+.bar-description{
+  display: block;
+  margin: 0;
+  padding: 0.6em 0.8em;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 500;
+  color: #fff;
+  font-size: 1em;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**************************************************************/
+/********************* Modifiers  *****************************/
+/**************************************************************/
+
+
+/***** modifiers of the stripes color *****/
+
+.is-red{
+  background-color: #e74c3c;
+}
+
+.is-orange{
+  background-color: #d35400;
+}
+
+.is-blue{
+  background-color: #2980b9;
+}
+
+.is-green{
+  background-color: #27ae60;
+}
+
+
+/***** skewed shape of progress bar modifier *****/
+
+.bar-progressing.is-skewed::after{
+  content: "";
+  display: block;
+  background: rgba(210, 218, 226,1.0);
+  width: 43.1875px;
+  height: 100%;
+  border-radius: 0;
+  position: absolute;
+  top: 0;
+  left: calc(100% - 21.59375px);
+  bottom: 0;
+  transform: skewX(45deg);
+}
+
+
+/***** progress range modifiers *****/
+
+.bar.progress-65 .bar-progressing{
+  animation: move 3s linear infinite, progress-65 1.5s linear;
+  animation-fill-mode: forwards;
+}
+
+.bar.progress-90 .bar-progressing{
+  animation: move 3s linear infinite, progress-90 1.5s linear;
+  animation-fill-mode: forwards;
+}
+
+.bar.progress-70 .bar-progressing{
+  animation: move 3s linear infinite, progress-70 1.5s linear;
+  animation-fill-mode: forwards;
+}
+
+.bar.progress-85 .bar-progressing{
+  animation: move 3s linear infinite, progress-85 1.5s linear;
+  animation-fill-mode: forwards;
+}
+
+
+@keyframes move {
+  100%  {background-position: -50px 50px}
+}
+
+@keyframes progress-65 {
+  0% {width: 0%}
+  100% {width: 65%}
+}
+
+@keyframes progress-90 {
+  0% {width: 0%}
+  100% {width: 90%}
+}
+
+@keyframes progress-70 {
+  0% {width: 0%}
+  100% {width: 70%}
+}
+
+@keyframes progress-85 {
+  0% {width: 0%}
+  100% {width: 85%}
+}
